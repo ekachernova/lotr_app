@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function VolumeDetail() {
   const router = useRouter();
-  // /volumes/[slug]
+  // Solution helper: /volumes/[slug]
   const { slug } = router.query;
 
   const volume = volumes.find((volume) => volume.slug === slug);
@@ -13,7 +13,7 @@ export default function VolumeDetail() {
   const i = volumes.findIndex((volume) => volume.slug === slug);
   const length = volumes.length;
   const prevSlug = volumes[i === 0 ? 0 : i - 1].slug;
-  // i = 2  length = 3 : nextSlug = 3   length[3] => undefined
+  // Solution helper: i = 2  length = 3 : nextSlug = 3   length[3] => undefined
   const nextSlug = volumes[i >= length - 1 ? length - 1 : i + 1].slug;
 
   function getRandomElement(array) {
