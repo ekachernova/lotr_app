@@ -1,7 +1,5 @@
-export default function HomePage() {
-  return (
-    <div>
-      <h1>Hello from Next.js</h1>
-    </div>
-  );
+import Link from "next/link"
+
+export default function Homepage() {
+  return <Link href={`/volumes`}>All Volumes</Link>
 }

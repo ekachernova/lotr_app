@@ -1,22 +1,32 @@
 import Link from "next/link"
 import { volumes } from "../../public/resources 3/lib/data"
-
+import Image from "next/image";
 export default function FellowshipOfTheRing() {
-
+    const volume = volumes.find(
+        ({ slug }) => slug === "the-fellowship-of-the-ring"
+      );
+    
     return (
         <>
-        <Link href={`/volumes/`}>All Volumes</Link>
+        <Link href="../volumes">All Volumes</Link>
         <h1>Fellowship of the Ring</h1>
-        <p>{volumes[0].description}</p>
+        <p>{volume.description}</p>
         <ul>
-            <li>{volumes[0].books[0].title} {volumes[0].books[0].ordinal}</li>
-            <li>{volumes[0].books[1].title} {volumes[0].books[1].ordinal}</li>
+            <li>{volume.title} {volumes[0].books[0].ordinal}</li>
+            <li>{volume.books[1].title} {volume.books[1].ordinal}</li>
         </ul>
+        <Image
+             src={volume.cover}
+             alt={volume.title}
+             width={140}
+             height={230}
+        >
+        </Image>
         <div>
-        <Link href="">Previous</Link>
+        <Link href="/volumes">Previous</Link>
         </div>
         <div>
-        <Link href="">Next</Link>
+        <Link href="/volumes/the-two-towers">Next</Link>
         </div>
         </>
         )

@@ -1,15 +1,12 @@
-import Link from "next/link"
-import { volumes } from "../../public/resources 3/lib/data"
-import Image from "next/image";
-export default function ReturnOfTheKing() {
+export default function VolumeDetail() {
     const volume = volumes.find(
-        ({ slug }) => slug === "the-return-of-the-king"
+        ({ slug }) => slug === "the-fellowship-of-the-ring"
       );
     
     return (
         <>
         <Link href="../volumes">All Volumes</Link>
-        <h1>The return of the King</h1>
+        <h1>Fellowship of the Ring</h1>
         <p>{volume.description}</p>
         <ul>
             <li>{volume.title} {volumes[0].books[0].ordinal}</li>
@@ -23,10 +20,10 @@ export default function ReturnOfTheKing() {
         >
         </Image>
         <div>
-        <Link href="/volumes/the-two-towers">Previous</Link>
+        <Link href="/volumes">Previous</Link>
         </div>
         <div>
-        <Link href="/volumes">Next</Link>
+        <Link href="/volumes/the-two-towers">Next</Link>
         </div>
         </>
         )
